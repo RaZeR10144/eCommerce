@@ -7,6 +7,6 @@
 <title>CloudMobiles</title>
 </head>
 <body>
-	${greeting}
+	${greeting};
 </body>
 </html>
