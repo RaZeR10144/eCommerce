@@ -1,0 +1,10 @@
+package eCommerce.CloudMobilesBackend.dao;
+
+import java.util.List;
+
+import eCommerce.CloudMobilesBackend.dto.Category;
+
+public interface CategoryDAO 
+{
+	List<Category> list();
+}
