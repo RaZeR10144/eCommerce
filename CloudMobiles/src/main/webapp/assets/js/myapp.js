@@ -10,11 +10,15 @@ $(function() {
 	case 'Registration':
 		$('#registration').addClass('active');
 		break;
+	case 'View Products':
+		$('#listProducts').addClass('active');
+		break;
 	case 'Login':
 		$('#login').addClass('active');
 		break;
 	default:
-		$('#home').addClass('active');
+		$('#listProducts').addClass('active');
+		$('#a_'+menu).addClass('active'); 
 		break;
 	}
 	
