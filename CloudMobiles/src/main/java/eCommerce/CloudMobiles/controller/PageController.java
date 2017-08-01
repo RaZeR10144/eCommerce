@@ -11,7 +11,7 @@ import eCommerce.CloudMobilesBackend.dto.Category;
 
 @Controller
 public class PageController {
-	@Autowired
+	@Autowired(required=true)
 	private CategoryDAO categoryDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })

@@ -13,7 +13,7 @@
    ">
 
 	<context:component-scan base-package="eCommerce.CloudMobiles.controller" />
-	<context:component-scan base-package="eCommerce.CloudMobilesBackend.daoimpl" />
+	<context:component-scan base-package="eCommerce.CloudMobilesBackend" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
