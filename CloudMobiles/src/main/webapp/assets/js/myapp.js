@@ -204,12 +204,12 @@ $(function() {
 											}
 							},							
 							{
-								data: 'active',
+								data: 'id',
 								bSortable: false,
 								mRender: function(data,type,row)
 											{
 												var str = '';
-												str +='<a href="${contextRoot}/manage/'+data+'/product" class="btn btn-warning">';
+												str +='<a href="'+window.contextRoot+'/manage/'+data+'/product" class="btn btn-warning">';
 												str +='<span class="glyphicon glyphicon-pencil"></span></a>';
 												
 												return str;
@@ -238,11 +238,16 @@ $(function() {
 																		if(confirmed)
 																			{
 																				console.log(value);
-																				bootbox.alert({
-																					size: 'medium',
-																					title: 'Information',
-																					message: 'you are going to perform operation on product' + value
-																				});
+																				
+																				var activationUrl = window.contextRoot + '/manage/product/' + value + '/activation';
+																				$.post(activationUrl, function(data)
+																						{
+																							bootbox.alert({
+																							size: 'medium',
+																							title: 'Information',
+																							message: data
+																							});																					
+																						});																																							
 																			}
 																		else
 																			{
