@@ -23,9 +23,8 @@
 
 <script>
 	window.menu = '${title}';
-	
+
 	window.contextRoot = '${contextRoot}';
-	
 </script>
 
 <!-- Bootstrap Core CSS -->
@@ -36,13 +35,6 @@
 
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -78,47 +70,50 @@
 			<c:if test="${userClickRegistration == true }">
 				<%@include file="registration.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading only when user clicks AllProducts or CategoryProducts -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true }">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading only when user clicks show product -->
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading only when user clicks manage product -->
 			<c:if test="${userClickManageProducts == true}">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
-			
-		</div>
 
+		</div>
 		<!-- FOOTER -->
 		<%@include file="./shared/footer.jsp"%>
-
-		<!-- jQuery -->
-		<script src="${js}/jquery.min.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-		
-		<!-- DataTable plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		<!-- DataTable Bootstrap Script -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-		
-		<!-- Bootbox -->
-		<script src="${js}/bootbox.min.js"></script>
-		
-
-		<!-- self coded javascript -->
-		<script src="${js}/myapp.js"></script>
-
 	</div>
+
+	<!-- jQuery -->
+	<script src="${js}/jquery.min.js"></script>
+
+	<!-- jQuery validator -->
+	<script src="${js}/jquery.validate.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="${js}/bootstrap.min.js"></script>
+
+	<!-- DataTable plugin -->
+	<script src="${js}/jquery.dataTables.js"></script>
+
+	<!-- DataTable Bootstrap Script -->
+	<script src="${js}/dataTables.bootstrap.js"></script>
+
+	<!-- Bootbox -->
+	<script src="${js}/bootbox.min.js"></script>
+
+
+	<!-- self coded javascript -->
+	<script src="${js}/myapp.js"></script>
+
 </body>
 
 </html>

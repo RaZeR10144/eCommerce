@@ -172,7 +172,7 @@
 					
 				<div class="modal-body">
 					<!-- Category Form -->
-					<sf:form modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
+					<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category" method="POST" class="form-horizontal">
 						<div class="form-group">
 							<label for="category_name" class="control-form col-md-4">Category Name</label>
 							<div class="col-md-8">
