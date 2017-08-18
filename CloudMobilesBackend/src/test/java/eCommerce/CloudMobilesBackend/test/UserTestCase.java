@@ -25,11 +25,12 @@ public class UserTestCase {
 		userDAO = (UserDAO) context.getBean("userDAO");
 	}
 
-	/*@Test
+	@Test
 	public void testAdd() {
 		user = new User();
 		user.setFirstName("Amitabh");
 		user.setLastName("Bacchan");
+		user.setAddress("khalsa,juhu road,vileparle(W)");
 		user.setEmail("ab@gmail.com");
 		user.setContactNumber("1234561230");
 		user.setRole("USER");
@@ -48,7 +49,7 @@ public class UserTestCase {
 		// add the user
 		assertEquals("Failed to add User!", true, userDAO.addUser(user));
 
-	}*/
+	}
 
 	@Test
 	public void testUpdateCart()

@@ -23,8 +23,10 @@ import eCommerce.CloudMobiles.util.FileUploadUtility;
 import eCommerce.CloudMobiles.validator.ProductValidator;
 import eCommerce.CloudMobilesBackend.dao.CategoryDAO;
 import eCommerce.CloudMobilesBackend.dao.ProductDAO;
+import eCommerce.CloudMobilesBackend.dao.UserDAO;
 import eCommerce.CloudMobilesBackend.dto.Category;
 import eCommerce.CloudMobilesBackend.dto.Product;
+import eCommerce.CloudMobilesBackend.dto.User;
 
 @Controller
 @RequestMapping("/manage")
@@ -35,6 +37,9 @@ public class ManagementController
 	
 	@Autowired
 	private ProductDAO productDAO;
+	
+	@Autowired
+	private UserDAO userDAO;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
 	
@@ -173,4 +178,7 @@ public class ManagementController
 		return new Category();
 	}
 	
+	
+	
 }
+

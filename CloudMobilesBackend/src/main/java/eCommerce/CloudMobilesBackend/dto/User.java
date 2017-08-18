@@ -25,6 +25,8 @@ public class User
 	private String firstName;
 	@Column(name = "last_name")
 	private String lastName;
+	private String address;
+	
 	private String email;
 	@Column(name = "contact_number")
 	private String contactNumber;
@@ -65,6 +67,13 @@ public class User
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getEmail() {
 		return email;
