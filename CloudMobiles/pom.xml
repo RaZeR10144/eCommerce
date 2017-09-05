@@ -7,13 +7,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CloudMobiles Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
 	<properties>
 		<javaee.version>7.0</javaee.version>
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 	</properties>
+	
 	<dependencies>
-
 		<!-- Link Backend Project -->
 		<dependency>
 			<groupId>eCommerce</groupId>
@@ -48,8 +49,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		
 
 		<!-- JSTL -->
 		<dependency>
@@ -57,7 +56,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>junit</groupId>

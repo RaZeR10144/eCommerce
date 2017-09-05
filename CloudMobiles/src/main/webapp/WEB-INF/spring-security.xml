@@ -10,11 +10,20 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<context:component-scan base-package="eCommerce.CloudMobilesBackend"/>
-
+	
+	<http pattern="/resources/**" security="none"/>
+	
 	<http>
-		<intercept-url pattern="/**" access="hasAuthority('USER')" />
-		<form-login />
+		<!-- only for Admin access -->
+		<intercept-url pattern="/manage/**" access="hasAuthority('ADMIN')" />
+		<!-- only for User access(who is registered) -->
+		<intercept-url pattern="/cart/**" access="hasAuthority('USER')" />
+		<!-- rest of the world -->
+		<intercept-url pattern="/**" access="permitAll" />
+		<form-login login-page="/login" />
+		<access-denied-handler error-page="/access-denied"/>
 		<logout />
+		
 	</http>
 
 	<authentication-manager>

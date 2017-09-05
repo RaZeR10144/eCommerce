@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import eCommerce.CloudMobiles.exception.ProductNotFoundException;
@@ -62,14 +63,6 @@ public class PageController {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Contact Us");
 		mv.addObject("userClickContact", true);
-		return mv;
-	}
-
-	@RequestMapping(value = "/login")
-	public ModelAndView login() {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "Login");
-		mv.addObject("userClickLogin", true);
 		return mv;
 	}
 
@@ -152,6 +145,30 @@ public class PageController {
 
 		mv.addObject("userClickShowProduct", true);
 
+		return mv;
+	}
+	
+	/*LOGIN*/
+	@RequestMapping(value = "/login")
+	public ModelAndView login(@RequestParam(name="error", required=false) String error) 
+	{
+		ModelAndView mv = new ModelAndView("login");
+		
+		if(error!=null)
+		{
+			mv.addObject("message", "Invalid Username and Password!");
+		}
+		mv.addObject("title", "Login");
+		return mv;
+	}
+	
+	/* access denied page */
+	@RequestMapping(value = "/access-denied")
+	public ModelAndView accessDenied() {
+		ModelAndView mv = new ModelAndView("error");
+		mv.addObject("title", "403 - Access Denied");
+		mv.addObject("errorTitle", "Aha! Caught You.");
+		mv.addObject("errorDescription", "You are not authorized to view this page!");
 		return mv;
 	}
 
