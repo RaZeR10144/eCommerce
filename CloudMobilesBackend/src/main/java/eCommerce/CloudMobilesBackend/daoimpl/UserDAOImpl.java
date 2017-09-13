@@ -30,23 +30,20 @@ public class UserDAOImpl implements UserDAO
 			return false;
 		}
 	}
+	
+	// related to cart
+		/*@Override
+		public boolean updateCart(Cart cart) {
+			try {
+				sessionFactory.getCurrentSession().update(cart);
+				return true;
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				return false;
+			}
 
-	@Override
-	public boolean updateCart(Cart cart) 
-	{	
-		try
-		{
-			sessionFactory.getCurrentSession().update(cart);
-			return true;
-		}
-		catch(Exception ex)
-		{
-			ex.printStackTrace();
-			return false;
-		}
+		}*/
 		
-	}
-
 	@Override
 	public User getByEmail(String email) {
 		String selectQuery = "FROM User WHERE email= :email";

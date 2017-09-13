@@ -10,5 +10,5 @@ public interface UserDAO
 	User getByEmail(String email);
 	
 	//add a cart
-	boolean updateCart(Cart cart);
+	//boolean updateCart(Cart cart);
 }

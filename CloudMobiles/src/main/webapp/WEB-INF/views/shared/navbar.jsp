@@ -48,7 +48,7 @@
 
 						<ul class="dropdown-menu">
 							<security:authorize access="hasAuthority('USER')">
-								<li><a href="${contextRoot}/cart"> <span
+								<li><a href="${contextRoot}/cart/show"> <span
 										class="glyphicon glyphicon-shopping-cart"></span> <span
 										class="badge">${userModel.cart.cartLines}</span> - &#8377;
 										${userModel.cart.grandTotal}
