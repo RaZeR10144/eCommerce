@@ -64,6 +64,6 @@ public class UserTestCase {
 		
 		cart.setCartLines(5);
 		
-		//assertEquals("Failed to update cart!", true, userDAO.updateCart(cart));
+		// assertEquals("Failed to update cart!", true, userDAO.updateCart(cart));
 	}
 }

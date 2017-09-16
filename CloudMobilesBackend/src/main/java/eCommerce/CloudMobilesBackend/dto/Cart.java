@@ -56,5 +56,9 @@ public class Cart
 	public void setCartLines(int cartLines) {
 		this.cartLines = cartLines;
 	}
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + ", grandTotal=" + grandTotal + ", cartLines=" + cartLines + "]";
+	}
 	
 }
