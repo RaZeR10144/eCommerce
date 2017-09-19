@@ -23,6 +23,7 @@ import eCommerce.CloudMobiles.exception.ProductNotFoundException;
 import eCommerce.CloudMobilesBackend.dao.CategoryDAO;
 import eCommerce.CloudMobilesBackend.dao.ProductDAO;
 import eCommerce.CloudMobilesBackend.dao.UserDAO;
+import eCommerce.CloudMobilesBackend.dto.Cart;
 import eCommerce.CloudMobilesBackend.dto.Category;
 import eCommerce.CloudMobilesBackend.dto.Product;
 import eCommerce.CloudMobilesBackend.dto.User;
@@ -39,7 +40,7 @@ public class PageController {
 
 	@Autowired
 	private UserDAO userDAO;
-
+	
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
@@ -81,14 +82,37 @@ public class PageController {
 
 	// save register
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView SaveRegistration(@Valid @ModelAttribute("user") User user, BindingResult results) {
+	public ModelAndView SaveRegistration(@Valid @ModelAttribute("user") User user, BindingResult results) 
+	{
+		
 		ModelAndView mv = new ModelAndView();
 		if (results.hasErrors()) {
 			mv.setViewName("registration");
 			return mv;
 
-		} else {
+		} 
+		else 
+		{	
+			//userDAO.addUser(user);
+			//User user1 = user;
+			Cart cart = null;
+			// Create the cart for this user
+			cart = new Cart();
+			cart.setUser(user);
+			//attach cart with user
+			user.setCart(cart);
+			
+			/*if (user.getRole() == "USER") {
+				// Create the cart for this user
+				cart = new Cart();
+				cart.setUser(user);
+
+				//attach cart with user
+				user.setCart(cart);
+			}*/
+			
 			userDAO.addUser(user);
+			
 			mv.setViewName("redirect:/login");
 			return mv;
 		}

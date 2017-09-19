@@ -16,6 +16,9 @@ public class UserDAOImpl implements UserDAO
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	@Autowired
+	private UserDAO userDAO;
+	
 	@Override
 	public boolean addUser(User user) 
 	{
