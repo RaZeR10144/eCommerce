@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -75,21 +76,23 @@ public class PageController {
 	@RequestMapping(value = "/registration")
 	public ModelAndView registration() {
 		ModelAndView mv = new ModelAndView("page");
+		User nUser = new User();
 		mv.addObject("title", "Registration");
 		mv.addObject("userClickRegistration", true);
+		mv.addObject("user", nUser);
 		return mv;
 	}
 
 	// save register
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView SaveRegistration(@Valid @ModelAttribute("user") User user, BindingResult results) 
+	public String SaveRegistration(@Valid @ModelAttribute("user") User user, BindingResult results, Model model) 
 	{
-		
-		ModelAndView mv = new ModelAndView();
-		if (results.hasErrors()) {
-			mv.setViewName("registration");
-			return mv;
-
+		//ModelAndView mv = new ModelAndView();
+		if (results.hasErrors()) 
+		{
+			model.addAttribute("userClickRegistration", true); 
+			model.addAttribute("title", "Registration");
+			return "page";
 		} 
 		else 
 		{	
@@ -112,9 +115,7 @@ public class PageController {
 			}*/
 			
 			userDAO.addUser(user);
-			
-			mv.setViewName("redirect:/login");
-			return mv;
+			return "redirect:/login";
 		}
 
 	}
