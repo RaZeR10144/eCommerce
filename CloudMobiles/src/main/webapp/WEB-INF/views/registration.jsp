@@ -20,7 +20,7 @@
 				</div>
 				<div class="panel-body">
 					<sf:form class="form-horizontal" modelAttribute="user"
-						action="register" method="POST">
+						action="${contextRoot}/register" method="POST">
 						<div class="form-group">
 							<label class="control-label col-md-4" for="name">First
 								Name :- </label>
@@ -79,18 +79,6 @@
 								<sf:input type="password" path="password" class="form-control"
 									placeholder="Password" />
 								<sf:errors path="password" cssClass="help-block" element="em" />
-							</div>
-						</div>
-
-						<!-- Radio button using bootstrap class of radio-inline -->
-						<div class="form-group">
-							<label class="control-label col-md-4">Select Role</label>
-							<div class="col-md-8">
-								<label class="radio-inline"> <input type="radio"
-										path="role" value="USER" checked="checked" /> User
-								</label> <label class="radio-inline"> <input type="radio"
-										path="role" value="SUPPLIER" /> Supplier
-								</label>
 							</div>
 						</div>
 

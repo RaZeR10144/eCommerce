@@ -96,24 +96,15 @@ public class PageController {
 		} 
 		else 
 		{	
-			//userDAO.addUser(user);
+			
 			//User user1 = user;
 			Cart cart = null;
 			// Create the cart for this user
 			cart = new Cart();
 			cart.setUser(user);
 			//attach cart with user
-			user.setCart(cart);
-			
-			/*if (user.getRole() == "USER") {
-				// Create the cart for this user
-				cart = new Cart();
-				cart.setUser(user);
-
-				//attach cart with user
-				user.setCart(cart);
-			}*/
-			
+			user.setCart(cart);	
+			user.setRole("USER");
 			userDAO.addUser(user);
 			return "redirect:/login";
 		}
